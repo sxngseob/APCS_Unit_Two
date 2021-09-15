@@ -28,40 +28,7 @@ class UnitTwoTests {
         System.setErr(originalErr);
     }
 
-    @Test
-    @Order(1)
-    void PointsAndRectanglesTest() throws IOException {
-        String[] args = null;
-        System.setIn(new FileInputStream("data_files/pandr.txt"));
-        PointsAndRectangles.main(args);
-        assertTrue(outContent.toString().contains("java.awt.Point[x=7,y=3]\njava.awt.Dimension[width=6,height=2]\njava.awt.Rectangle[x=7,y=3,width=6,height=2]"),
-                "Did you use the correct arguments?");
 
-    }
-
-    @Test
-    @Order(2)
-    void FightSongTest() {
-        String[] args = null;
-        String expect = "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n" +
-                "You're the best,\n" +
-                "In the West.\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n" +
-                "You're the best,\n" +
-                "In the West.\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n";
-                FightSong.main(args);
-        assertEquals(expect, outContent.toString(), "Check your spelling, punctuation and blank lines");
-    }
 
     @Test
     @Order(4)
