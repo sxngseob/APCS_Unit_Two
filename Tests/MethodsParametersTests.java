@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Unit2_3Tests {
+public class MethodsParametersTests {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -28,25 +28,20 @@ public class Unit2_3Tests {
     }
 
     @Test
-    void FightSongTest() {
-        String[] args = null;
-        String expect = "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n" +
-                "You're the best,\n" +
-                "In the West.\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n" +
-                "You're the best,\n" +
-                "In the West.\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n\n" +
-                "Go, team, go!\n" +
-                "You can do it.\n";
-        FightSong.main(args);
-        assertEquals(expect, outContent.toString(), "Check your spelling, punctuation and blank lines");
+    void FourRectanglePrinterTest() {
+        String expect = "java.awt.Rectangle[x=5,y=3,width=7,height=13]\n" +
+                "java.awt.Rectangle[x=12,y=3,width=7,height=13]\n" +
+                "java.awt.Rectangle[x=12,y=16,width=7,height=13]\n" +
+                "java.awt.Rectangle[x=5,y=16,width=7,height=13]\n";
+        FourRectanglePrinter.main(null);
+        assertEquals(expect, outContent.toString());
+    }
+
+    @Test
+    void GrowSquarePrinterTest() {
+        String expect = "java.awt.Rectangle[x=100,y=100,width=50,height=50]\n" +
+                "java.awt.Rectangle[x=100,y=100,width=100,height=100]\n";
+        GrowSquarePrinter.main(null);
+        assertEquals(expect, outContent.toString());
     }
 }
